@@ -576,3 +576,48 @@ body {
     line-height: 1.12;
   }
 }
+
+body main .copy-container .anime-text .rule-list {
+  width: 100%;
+  padding-left: 1.3em;
+  color: #fff;
+  font-family: "Jersey 15", sans-serif;
+  font-size: 2rem;
+  line-height: 1.2;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+body main .copy-container .anime-text .rule-list li::marker {
+  color: #a3ff12;
+}
+
+@media (min-width: 1440px) {
+  body main .copy-container .anime-text .rule-list {
+    font-size: clamp(2rem, 2.2vw, 2.75rem);
+  }
+}
+
+@media (max-width: 1024px) {
+  body main .copy-container .anime-text .rule-list {
+    font-size: clamp(1.55rem, 3.5vw, 2rem);
+  }
+}
+
+@media (max-width: 768px) {
+  body main .copy-container .anime-text .rule-list {
+    font-size: clamp(1.35rem, 4.8vw, 1.8rem);
+    line-height: 1.15;
+    gap: 0.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body main .copy-container .anime-text .rule-list {
+    font-size: clamp(1.15rem, 5.35vw, 1.45rem);
+    line-height: 1.12;
+    gap: 0.5rem;
+  }
+}

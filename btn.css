@@ -450,14 +450,14 @@ mark {
 .triggerSpanG {
   background-image: linear-gradient(
       100deg,
-      #ffffff00 1%,
-      #ffffff 2.5%,
-      #ffffff80 5.7%,
-      #ffffff1a 93%,
-      #ffffffb4 95%,
-      #ffffff00 98%
+      #a3ff1200 1%,
+      #a3ff12 2.5%,
+      #a3ff1280 5.7%,
+      #a3ff121a 93%,
+      #a3ff12b4 95%,
+      #a3ff1200 98%
     ),
-    linear-gradient(182deg, #ffffff00, #ffffff4d 8%, #ffffff00 15%);
+    linear-gradient(182deg, #a3ff1200, #a3ff124d 8%, #a3ff1200 15%);
   background-size: 0% 100%;
   background-repeat: no-repeat;
   padding: 0.3rem;
