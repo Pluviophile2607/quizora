@@ -35,10 +35,11 @@ function initScroll(section, items, direction) {
       trigger: section,
       pin: true,
       start: "top top",
-      end: () => `+=${items.length * 100}%`,
+      // Give every card more scroll distance so the sequence never races ahead.
+      end: () => `+=${items.length * window.innerHeight * 1.35}`,
 
-      // CHANGED: Increased scrub to 2.5 for smoother/slower feel
-      scrub: 3.5,
+      // A moderate catch-up keeps the cards smooth without delayed jumps.
+      scrub: 1.5,
 
       invalidateOnRefresh: true,
     },

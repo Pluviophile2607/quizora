@@ -274,12 +274,12 @@ body {
 }
 @media (min-width: 1440px) {
   body main .navbar { padding: 1.5rem 3rem; }
-  body main .copy-container h1 { font-size: clamp(5rem, 6vw, 7.5rem); }
+  body main .copy-container h1 { font-size: clamp(5.5rem, 6.4vw, 8rem); }
   body main .copy-container .anime-text { width: min(60%, 70rem); }
   body main .copy-container .anime-text p { font-size: clamp(2rem, 2.2vw, 2.75rem); }
 }
 @media (max-width: 1024px) {
-  body main .copy-container h1 { width: 82%; font-size: clamp(3.5rem, 8vw, 5rem); }
+  body main .copy-container h1 { width: 82%; font-size: clamp(3.75rem, 8.3vw, 5.35rem); }
   body main .copy-container .anime-text { width: 78%; }
   body main .copy-container .anime-text p { font-size: clamp(1.55rem, 3.5vw, 2rem); }
 }
@@ -289,7 +289,7 @@ body {
   body main .horizontal-section { height: 100svh; }
   body main .wrapper { padding: 0.75rem; }
   body main .item_content { border-radius: 1.5rem; }
-  body main .copy-container h1 { width: 88%; font-size: clamp(3rem, 11vw, 4.5rem); }
+  body main .copy-container h1 { width: 88%; font-size: clamp(3.2rem, 11.5vw, 4.75rem); }
   body main .copy-container .anime-text { width: 90%; padding: 1.25rem; }
   body main .copy-container .anime-text p { font-size: clamp(1.35rem, 4.8vw, 1.8rem); line-height: 1.15; }
 }
@@ -299,7 +299,7 @@ body {
   body main nav .navbar .btn { padding: 0.55em 0.65em; font-size: 1rem; }
   body main .wrapper { padding: 0.5rem; }
   body main .item_content { border-radius: 1.1rem; }
-  body main .copy-container h1 { width: 90%; font-size: clamp(2.6rem, 12vw, 3.7rem); }
+  body main .copy-container h1 { width: 90%; font-size: clamp(2.75rem, 12.5vw, 3.9rem); }
   body main .copy-container .anime-text { width: 100%; padding: 0.9rem; }
   body main .copy-container .anime-text p { font-size: clamp(1.15rem, 5.35vw, 1.45rem); line-height: 1.12; }
 }
@@ -318,14 +318,14 @@ body main .copy-container .anime-text .rule-list {
 }
 body main .copy-container .anime-text .rule-list li::marker { color: #a3ff12; }
 @media (min-width: 1440px) {
-  body main .copy-container .anime-text .rule-list { font-size: clamp(2rem, 2.2vw, 2.75rem); }
+  body main .copy-container .anime-text .rule-list { font-size: clamp(2.15rem, 2.35vw, 2.9rem); }
 }
 @media (max-width: 1024px) {
-  body main .copy-container .anime-text .rule-list { font-size: clamp(1.55rem, 3.5vw, 2rem); }
+  body main .copy-container .anime-text .rule-list { font-size: clamp(1.65rem, 3.65vw, 2.15rem); }
 }
 @media (max-width: 768px) {
-  body main .copy-container .anime-text .rule-list { font-size: clamp(1.35rem, 4.8vw, 1.8rem); line-height: 1.15; gap: 0.65rem; }
+  body main .copy-container .anime-text .rule-list { font-size: clamp(1.45rem, 5vw, 1.9rem); line-height: 1.15; gap: 0.65rem; }
 }
 @media (max-width: 480px) {
-  body main .copy-container .anime-text .rule-list { font-size: clamp(1.15rem, 5.35vw, 1.45rem); line-height: 1.12; gap: 0.5rem; }
+  body main .copy-container .anime-text .rule-list { font-size: clamp(1.22rem, 5.6vw, 1.5rem); line-height: 1.12; gap: 0.5rem; }
 }
