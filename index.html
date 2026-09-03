@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizora</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="btn.css" />
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/sheryjs/dist/Shery.js"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <main>
+        <section>
+          <nav>
+            <div class="navbar">
+              <button class="btn cube cube-hover" type="button">
+                <div class="bg-top">
+                  <div class="bg-inner"></div>
+                </div>
+                <div class="bg-right">
+                  <div class="bg-inner"></div>
+                </div>
+                <div class="bg">
+                  <div class="bg-inner"></div>
+                </div>
+                <div class="txtm">Quizora</div>
+              </button>
+
+              <div class="btnc">
+                <article class="keycap">
+                  <aside class="letter"><a href="#rule">Rules</a></aside>
+                </article>
+                <!-- <article class="keycap">
+                  <aside class="letter"><a href="#">Team Member's</a></aside>
+                </article> -->
+              </div>
+            </div>
+          </nav>
+        </section>
+
+        <section>
+          <div class="hero">
+            <div class="text"></div>
+            <!-- From Uiverse.io by BlackisPlay -->
+            <div id="ghost">
+              <div id="red">
+                <div id="pupil"></div>
+                <div id="pupil1"></div>
+                <div id="eye"></div>
+                <div id="eye1"></div>
+                <div id="top0"></div>
+                <div id="top1"></div>
+                <div id="top2"></div>
+                <div id="top3"></div>
+                <div id="top4"></div>
+                <div id="st0"></div>
+                <div id="st1"></div>
+                <div id="st2"></div>
+                <div id="st3"></div>
+                <div id="st4"></div>
+                <div id="st5"></div>
+                <div id="an1"></div>
+                <div id="an2"></div>
+                <div id="an3"></div>
+                <div id="an4"></div>
+                <div id="an5"></div>
+                <div id="an6"></div>
+                <div id="an7"></div>
+                <div id="an8"></div>
+                <div id="an9"></div>
+                <div id="an10"></div>
+                <div id="an11"></div>
+                <div id="an12"></div>
+                <div id="an13"></div>
+                <div id="an14"></div>
+                <div id="an15"></div>
+                <div id="an16"></div>
+                <div id="an17"></div>
+                <div id="an18"></div>
+              </div>
+              <div id="shadow"></div>
+            </div>
+          </div>
+        </section>
+        <!-- <div id="rule">
+          <div class="rules">
+            <section class="gr sec">
+              <div class="copy-container">
+                <h1>RULES AND REGULATION</h1>
+              </div>
+            </section>
+            <section class="rulesd anime-text-cont sec">
+              <div class="copy-container">
+                <div class="anime-text">
+                  <p>
+                    Participants must register in <span class="triggerSpanG">duos only.</span> <br />
+                    Both members must be from the <span class="triggerSpanG">same eligible FY class.</span> <br />
+                    Each team must have one team name. <br />
+                    Participants must
+                    <span id="triggerSpan" class="triggerSpanG"
+                      >report 15 minutes</span
+                    >
+                    before the Events.
+                    <br />
+                    <span id="triggerSpan" class="triggerSpanG">
+                      No mobile phones </span
+                    >or external assistance allowed. <br />
+                    The
+                    <span id="triggerSpan" class="triggerSpanG"
+                      >Quiz Master’s</span
+                    >
+                    decision is final. <br />
+                    <span id="triggerSpan" class="triggerSpanG"
+                      >Misbehaviour or cheating
+                    </mark>
+                    will result in disqualification.
+                  </p>
+                </div>
+              </div>
+            </section>
+            <section class="round1 sec">
+              <div class="copy-container">
+                <h1>Round 1 - MCQ WipeOut</h1>
+              </div>
+            </section>
+            <section class="rulesd anime-text-cont sec">
+              <div class="copy-container">
+                <div class="anime-text">
+                  <p>
+                    <mark id="triggerSpan" class="triggerSpanY">15 MCQs </mark>
+                    |
+                    <mark id="triggerSpan" class="triggerSpanY">
+                      Time: 10 minutes
+                    </mark>
+                    | <br />Paper-based
+                    <mark id="triggerSpan" class="triggerSpanY">+1 for </mark>
+                    every correct answer, <br />no negative marking.
+                    <mark id="triggerSpan" class="triggerSpanY"
+                      >Team members may discuss quietly.
+                    </mark>
+                    <br />Top teams qualify for Round 2.
+                  </p>
+                </div>
+              </div>
+            </section>
+            <section class="round2 sec">
+              <div class="copy-container">
+                <h1>Round 2 - Buzzer Round</h1>
+              </div>
+            </section>
+            <section class="rulesd anime-text-cont sec">
+              <div class="copy-container">
+                <div class="anime-text">
+                  <p>
+                    <mark id="triggerSpan" class="triggerSpanR"
+                      >First team
+                    </mark>
+                    to press the buzzer gets to answer.
+                    <br />
+                    <mark id="triggerSpan" class="triggerSpanR"
+                      >+10 for correct</mark
+                    >
+                    ,
+                    <mark id="triggerSpan" class="triggerSpanR"
+                      >–5 for wrong</mark
+                    >
+                    answers.
+                    <br />
+                    Buzzer should be
+                    <mark id="triggerSpan" class="triggerSpanR"
+                      >pressed only</mark
+                    >
+                    after the question is fully read.
+                    <br />
+                    Must answer
+                    <mark id="triggerSpan" class="triggerSpanR"
+                      >within 5 seconds</mark
+                    >
+                    of pressing the buzzer,
+                    <mark id="triggerSpan" class="triggerSpanR">else –5.</mark>
+                    <br />
+                    Top teams move to Round 3.
+                  </p>
+                </div>
+              </div>
+            </section>
+            <section class="round3 sec">
+              <div class="copy-container">
+                <h1>Round 3 - Visual Decoding</h1>
+              </div>
+            </section>
+            <section class="rulesd anime-text-cont sec">
+              <div class="copy-container">
+                <div class="anime-text">
+                  <p>
+                    Identify visuals: pixelated images, logos, icons, scenes.
+                    <br />
+                    <mark id="triggerSpan" class="triggerSpanO"
+                      >10 seconds
+                    </mark>
+                    per visual.
+                    <br />
+                    <mark id="triggerSpan" class="triggerSpanO"
+                      >+10 for correct</mark
+                    >
+                    answers, no negative marking. <br />
+                    Team members
+                    <mark id="triggerSpan" class="triggerSpanO"
+                      >may discuss</mark
+                    >
+                    within the time limit. <br />
+                    Top teams advance to Round 4
+                  </p>
+                </div>
+              </div>
+            </section>
+            <section class="round4 sec">
+              <div class="copy-container">
+                <h1>Round 4 - Rapid Fire Round</h1>
+              </div>
+            </section>
+            <section class="rulesd anime-text-cont sec">
+              <div class="copy-container">
+                <div class="anime-text">
+                  <p>
+                    <mark id="triggerSpan" class="triggerSpanB"
+                      >Back-to-back</mark
+                    >questions until the team answers incorrectly.
+                    <br />
+                    +5 for each correct answer. <br />
+                    No passing of questions. <br />
+                    One team representative answers.
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div> -->
+        <div id="rule" class="scroll-section horizontal-section section">
+          <div class="wrapper">
+            <div role="list" class="list">
+              <div role="listitem" class="item gr sec">
+                <div class="item_content">
+                  <div class="copy-container">
+                    <h1>RULES AND REGULATION</h1>
+                  </div>
+                </div>
+              </div>
+
+              <div role="listitem" class="item rulesd anime-text-cont sec">
+                <div class="item_content">
+                  <div class="copy-container">
+                    <div class="anime-text">
+                      <p>
+                        Participants must register in <span class="triggerSpanG">duos only.</span> <br />
+                        Both members must be from the <span class="triggerSpanG">same eligible FY class.</span> <br />
+                        Each team must have one team name. <br />
+                        Participants must
+                        <span class="triggerSpanG">report 15 minutes</span>
+                        before the Events.
+                        <br />
+                        <span id="triggerSpan" class="triggerSpanG">
+                          No mobile phones
+                        </span>
+                        or external assistance allowed. <br />
+                        The
+                        <span id="triggerSpan" class="triggerSpanG"
+                          >Quiz Master’s</span
+                        >
+                        decision is final. <br />
+                        <span id="triggerSpan" class="triggerSpanG"
+                          >Misbehaviour or cheating
+                        </span>
+                        will result in disqualification.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div role="listitem" class="item eligibility sec">
+                <div class="item_content"><div class="copy-container"><h1>01 — ELIGIBILITY</h1></div></div>
+              </div>
+
+              <div role="listitem" class="item rulesd anime-text-cont sec">
+                <div class="item_content"><div class="copy-container"><div class="anime-text"><p>
+                  This event is <span class="triggerSpanG">exclusively for FY students.</span> <br />
+                  Students from <span class="triggerSpanG">IT, Data Science, and AI/ML</span> may participate. <br />
+                  Participants must register in <span class="triggerSpanG">duos only, with both members from the same class.</span>
+                </p></div></div></div>
+              </div>
+
+              <div role="listitem" class="item registration sec">
+                <div class="item_content"><div class="copy-container"><h1>02 — REGISTRATION</h1></div></div>
+              </div>
+
+              <div role="listitem" class="item rulesd anime-text-cont sec">
+                <div class="item_content"><div class="copy-container"><div class="anime-text"><p>
+                  Registration fee: <span class="triggerSpanY">₹20 per team.</span> <span class="triggerSpanY">Cash payment only</span> — no UPI or online payments. <br />
+                  Register on the announced dates from <span class="triggerSpanY">9:45 AM – 10:00 AM</span> in <span class="triggerSpanY">Classroom 411.</span> <br />
+                  Teams must provide the required details. Changes to team members may not be allowed after registration.
+                </p></div></div></div>
+              </div>
+
+              <div role="listitem" class="item conduct sec">
+                <div class="item_content"><div class="copy-container"><h1>03 — EVENT CONDUCT</h1></div></div>
+              </div>
+
+              <div role="listitem" class="item rulesd anime-text-cont sec">
+                <div class="item_content"><div class="copy-container"><div class="anime-text"><p>
+                  Report to the venue <span class="triggerSpanR">before the event begins</span> and sit in your assigned place. <br />
+                  Follow all instructions from the <span class="triggerSpanR">Quizora coordinators and quizmaster.</span> Maintain discipline throughout. <br />
+                  Disturbance, cheating, or unfair practice may result in <span class="triggerSpanR">disqualification.</span>
+                </p></div></div></div>
+              </div>
+
+              <div role="listitem" class="item quiz-rules sec">
+                <div class="item_content"><div class="copy-container"><h1>04 — QUIZ RULES</h1></div></div>
+              </div>
+
+              <div role="listitem" class="item rulesd anime-text-cont sec">
+                <div class="item_content"><div class="copy-container"><div class="anime-text"><p>
+                  The quiz consists of <span class="triggerSpanO">multiple rounds</span> covering technology, IT, Data Science, AI/ML, computers, general tech knowledge, and logical thinking. <br />
+                  Questions vary in difficulty. Submit answers within the given time; late submissions may not be accepted. <br />
+                  The quizmaster's decision on <span class="triggerSpanO">answers, scoring, and rules is final.</span>
+                </p></div></div></div>
+              </div>
+
+              <div role="listitem" class="item round1 sec">
+                <div class="item_content">
+                  <div class="copy-container">
+                    <h1>Round 1 - MCQ WipeOut</h1>
+                  </div>
+                </div>
+              </div>
+
+              <div role="listitem" class="item rulesd anime-text-cont sec">
+                <div class="item_content">
+                  <div class="copy-container">
+                    <div class="anime-text">
+                      <p>
+                        <span id="triggerSpan" class="triggerSpanY"
+                          >15 MCQs
+                        </span>
+                        |
+                        <span id="triggerSpan" class="triggerSpanY">
+                          Time: 10 minutes
+                        </span>
+                        | <br />Paper-based
+                        <span id="triggerSpan" class="triggerSpanY"
+                          >+1 for
+                        </span>
+                        every correct answer, <br />no negative spaning.<br />
+                        <span id="triggerSpan" class="triggerSpanY"
+                          >Team members may discuss quietly.
+                        </span>
+                        <br />Top teams qualify for Round 2.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div role="listitem" class="item round2 sec">
+                <div class="item_content">
+                  <div class="copy-container">
+                    <h1>Round 2 - Buzzer Round</h1>
+                  </div>
+                </div>
+              </div>
+
+              <div role="listitem" class="item rulesd anime-text-cont sec">
+                <div class="item_content">
+                  <div class="copy-container">
+                    <div class="anime-text">
+                      <p>
+                        <span id="triggerSpan" class="triggerSpanR"
+                          >First team
+                        </span>
+                        to press the buzzer gets to answer.
+                        <br />
+                        <span id="triggerSpan" class="triggerSpanR"
+                          >+10 for correct</span
+                        >
+                        ,
+                        <span id="triggerSpan" class="triggerSpanR"
+                          >–5 for wrong</span
+                        >
+                        answers.
+                        <br />
+                        Buzzer should be
+                        <span id="triggerSpan" class="triggerSpanR"
+                          >pressed only</span
+                        >
+                        after the question is fully read.
+                        <br />
+                        Must answer
+                        <span id="triggerSpan" class="triggerSpanR"
+                          >within 5 seconds</span
+                        >
+                        of pressing the buzzer,
+                        <span id="triggerSpan" class="triggerSpanR"
+                          >else –5.</span
+                        >
+                        <br />
+                        Top teams move to Round 3.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div role="listitem" class="item round3 sec">
+                <div class="item_content">
+                  <div class="copy-container">
+                    <h1>Round 3 - Visual Decoding</h1>
+                  </div>
+                </div>
+              </div>
+
+              <div role="listitem" class="item rulesd anime-text-cont sec">
+                <div class="item_content">
+                  <div class="copy-container">
+                    <div class="anime-text">
+                      <p>
+                        Identify visuals: pixelated images, logos, icons,
+                        scenes.
+                        <br />
+                        <span id="triggerSpan" class="triggerSpanO"
+                          >10 seconds
+                        </span>
+                        per visual.
+                        <br />
+                        <span id="triggerSpan" class="triggerSpanO"
+                          >+10 for correct</span
+                        >
+                        answers, no negative spaning. <br />
+                        Team members
+                        <span id="triggerSpan" class="triggerSpanO"
+                          >may discuss</span
+                        >
+                        within the time limit. <br />
+                        Top teams advance to Round 4
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div role="listitem" class="item round4 sec">
+                <div class="item_content">
+                  <div class="copy-container">
+                    <h1>Round 4 - Rapid Fire Round</h1>
+                  </div>
+                </div>
+              </div>
+
+              <div role="listitem" class="item rulesd anime-text-cont sec">
+                <div class="item_content">
+                  <div class="copy-container">
+                    <div class="anime-text">
+                      <p>
+                        <span id="triggerSpan" class="triggerSpanB"
+                          >Back-to-back</span
+                        >
+                        questions until the team answers incorrectly.
+                        <br />
+                        +5 for each correct answer. <br />
+                        No passing of questions. <br />
+                        One team representative answers.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

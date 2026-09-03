@@ -1,0 +1,578 @@
+@import url("https://fonts.googleapis.com/css2?family=Jersey+10&family=Jersey+15&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+:root {
+  --bg-color-hsl: 59, 3%, 94%;
+  --bg-color: hsl(var(--bg-color-hsl));
+  --bg-color-translucent: hsla(var(--bg-color-hsl), 0.95);
+  --bg-color-highlight: #d4af37;
+  --color-text: hsl(192, 14%, 20%);
+  --color-text-highlight: hsl(0, 0%, 100%);
+  --page-width: 80ch;
+  --paragraph-font-size: min(max(1.2rem, 4vw), 1.4rem);
+  --header-font-size: min(max(2rem, 8vw), 4rem);
+  --ease: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body::selection {
+  background-color: #d4af37;
+}
+body {
+  /* 2. Ensure body doesn't block the height */
+  min-height: 100vh;
+  font-family: "jersey 10";
+
+  // .container {
+  //   /* 3. Use 100vh so it covers the whole screen */
+  //   width: 100%;
+  //   min-height: 100vh;
+
+  //   /* 4. Layout: Stack items vertically, start from top */
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center; /* Centers navbar horizontally */
+  //   justify-content: flex-start; /* Pushes navbar to TOP */
+
+  //   /* Background Styles */
+  //   background: #121212;
+  //   background: linear-gradient(
+  //     135deg,
+  //     #121212 25%,
+  //     #1a1a1a 25%,
+  //     #1a1a1a 50%,
+  //     #121212 50%,
+  //     #121212 75%,
+  //     #1a1a1a 75%,
+  //     #1a1a1a
+  //   );
+  //   background-size: 40px 40px;
+  //   animation: move 4s linear infinite;
+  // }
+
+  /* From Uiverse.io by lucas_5777 */
+  .container {
+    width: 100%;
+    min-height: 100vh;
+    --color: #1e1e1e;
+    background-color: #0c0c0c;
+    background-image: linear-gradient(
+        0deg,
+        transparent 24%,
+        var(--color) 25%,
+        var(--color) 26%,
+        transparent 27%,
+        transparent 74%,
+        var(--color) 75%,
+        var(--color) 76%,
+        transparent 77%,
+        transparent
+      ),
+      linear-gradient(
+        90deg,
+        transparent 24%,
+        var(--color) 25%,
+        var(--color) 26%,
+        transparent 27%,
+        transparent 74%,
+        var(--color) 75%,
+        var(--color) 76%,
+        transparent 77%,
+        transparent
+      );
+    background-size: 55px 55px;
+  }
+
+  @keyframes move {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 40px 40px;
+    }
+  }
+
+  main {
+    width: 100%; /* Ensure main takes full width */
+    //height: 1vh;
+    //background-color: #d4af37;
+
+    nav {
+      .navbar {
+        width: 100%;
+        padding: 1rem;
+
+        /* Flexbox for the Navbar content itself */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .btn {
+          display: block;
+          padding: 0.7em 1em;
+          background: transparent;
+          outline: none;
+          border: 0;
+          color: #d4af37;
+          letter-spacing: 0.1em;
+          font-family: "jersey 10";
+          font-size: 1.2rem;
+          font-weight: bold;
+          cursor: pointer;
+          z-index: 1;
+        }
+
+        .cube {
+          position: relative;
+          transition: all 0.5s;
+        }
+
+        .cube .bg-top {
+          position: absolute;
+          height: 10px;
+          background: #d4af37;
+          bottom: 100%;
+          left: 5px;
+          right: -5px;
+          transform: skew(-45deg, 0);
+          margin: 0;
+          transition: all 0.4s;
+        }
+
+        .cube .bg-top .bg-inner {
+          bottom: 0;
+        }
+
+        .cube .bg {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          top: 0;
+          right: 0;
+          background: #d4af37;
+          transition: all 0.4s;
+        }
+
+        .cube .bg-right {
+          position: absolute;
+          background: #d4af37;
+          top: -5px;
+          z-index: 0;
+          bottom: 5px;
+          width: 10px;
+          left: 100%;
+          transform: skew(0, -45deg);
+          transition: all 0.4s;
+        }
+
+        .cube .bg-right .bg-inner {
+          left: 0;
+        }
+
+        .cube .bg-inner {
+          background: #28282d;
+          position: absolute;
+          left: 2px;
+          right: 2px;
+          top: 2px;
+          bottom: 2px;
+        }
+
+        .cube .txtm {
+          position: relative;
+          transition: all 0.4s;
+        }
+
+        .cube:hover .bg-inner {
+          background: #d4af37;
+          transition: all 0.4s;
+        }
+
+        .cube:hover .txtm {
+          color: #28282d;
+          transition: all 0.4s;
+        }
+
+        .cube:hover .bg-right,
+        .cube:hover .bg,
+        .cube:hover .bg-top {
+          background: #28282d;
+        }
+
+        .cube:active {
+          z-index: 9999;
+          animation: bounce 0.1s linear;
+        }
+
+        @keyframes bounce {
+          50% {
+            transform: scale(0.9);
+          }
+        }
+        .btnc {
+          display: flex;
+          gap: 1rem;
+        }
+
+        // .menu {
+        //   background-color: #642727; /* Optional: adds a background strip */
+
+        //   .nav-list {
+        //     margin: 0;
+        //     padding: 0 20px; /* Adds some breathing room on the sides */
+        //     display: flex;
+        //     justify-content: flex-end;
+        //     align-items: center;
+        //     gap: 25px;
+
+        //     li {
+        //       cursor: pointer; /* Makes it look clickable */
+        //       font-family: sans-serif;
+        //       font-weight: bold;
+        //       transition: color 0.2s;
+        //       list-style: none;
+
+        //       &:hover {
+        //         color: #007bff; /* Color change on hover */
+        //       }
+        //     }
+        //   }
+        // }
+      }
+    }
+    // .rules {
+    //   width: 100%;
+    //   height: 100vh;
+    //   background-color: aliceblue;
+    //   border: 1px solid transparent;
+    //   padding: 1rem;
+    //   border-radius: 10px;
+    // }
+    // .hero {
+    //   width: 100%;
+    //   //background-color: #fff;
+    //   min-height: 80vh;
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+    //   txtm-align: center;
+    //   .content {
+    //     width: 60%;
+    //     // background-color: #fff;
+    //     padding: 1rem;
+
+    //     p {
+    //       font-family: "jersey 15";
+    //       color: #832b2b;
+    //       font-size: 2rem;
+    //       text-transform: capitalize;
+    //       span {
+    //         font-family: "jersey 10";
+    //         font-size: 2.2rem;
+    //         color: rgb(139, 21, 139);
+    //         //background-color: #d4af37;
+    //         padding: 0.2rem;
+    //         margin: 0.3rem;
+    //       }
+    //     }
+    //   }
+    // }
+    // .rules {
+    //   margin-top: 1rem;
+    //   width: 100%;
+    //   height: 100%;
+    //   background-color: #000000;
+    //   display: flex;
+    //   flex-direction: column;
+    //   padding: 1rem;
+    //   gap: 1rem;
+    //   .sec {
+    //     position: relative;
+    //     width: 100%;
+    //     height: 100svh;
+    //     padding: 2rem;
+    //     overflow: hidden;
+    //     border: 2px solid rgba(37, 37, 37, 0.384);
+    //     border-radius: 2rem;
+    //     .copy-container {
+    //       width: 100%;
+    //       height: 100%;
+    //       display: flex;
+    //       justify-content: center;
+    //       align-items: center;
+    //       text-align: center;
+    //       border-radius: 2rem;
+
+    //       h1 {
+    //         width: 70%;
+    //         color: #0c0c0c;
+    //         font-size: 5rem;
+    //         font-family: "jersey 10";
+    //         line-height: 1;
+    //       }
+
+    //       .anime-text {
+    //         width: 70%;
+
+    //         p {
+    //           color: rgb(255, 255, 255);
+    //           font-family: "jersey 15";
+    //           text-align: center;
+    //           margin-bottom: 0;
+    //           font-size: 2rem;
+    //           line-height: 1;
+
+    //           mark {
+    //             color: #fff;
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
+    //   .gr {
+    //     background-color: #fff;
+    //   }
+    //   .round1 {
+    //     background-color: #d4af37;
+    //   }
+    //   .round2 {
+    //     background-color: #fa0000;
+    //   }
+    //   .round3 {
+    //     background-color: #e65e0f;
+    //   }
+    //   .round4 {
+    //     background-color: #2c0dd8;
+    //   }
+    // }
+
+    /* --- Main Container --- */
+    .horizontal-section {
+      overflow: hidden;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .wrapper {
+      width: 100%;
+      height: 100%;
+      background-color: #000000; /* Your black background */
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* --- The Scroll Track --- */
+    .list {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      /* GSAP usually needs items absolutely positioned or flexed. 
+     Based on your reference, they stack on top of each other: */
+    }
+
+    /* --- Individual Slide (Card Wrapper) --- */
+    .item {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+
+      /* Color Variations - These match the classes in your HTML */
+      &.gr .item_content {
+        background-color: #fff;
+        h1 {
+          color: #000;
+        } /* Ensure text is visible on white */
+      }
+      &.round1 .item_content {
+        background-color: #d4af37;
+      }
+      &.eligibility .item_content {
+        background-color: #34d399;
+      }
+      &.registration .item_content {
+        background-color: #d4af37;
+      }
+      &.conduct .item_content {
+        background-color: #fa0000;
+      }
+      &.quiz-rules .item_content {
+        background-color: #e65e0f;
+      }
+      &.round2 .item_content {
+        background-color: #fa0000;
+      }
+      &.round3 .item_content {
+        background-color: #e65e0f;
+      }
+      &.round4 .item_content {
+        background-color: #2c0dd8;
+      }
+    }
+
+    /* --- Slide Content (The Visible Card) --- */
+    .item_content {
+      width: 100%;
+      height: 100%;
+      border-radius: 2rem; /* Your radius */
+      border: 2px solid rgba(37, 37, 37, 0.384); /* Your border */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: #000000; /* Default color */
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* --- Typography & Text Layout --- */
+    .copy-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      h1 {
+        width: 70%;
+        color: #0c0c0c;
+        font-size: 5rem;
+        font-family: "Jersey 10", sans-serif;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .anime-text {
+        width: 60%;
+        //background-color: #d4af37;
+        padding: 2rem;
+
+        p {
+          color: rgb(255, 255, 255);
+          font-family: "Jersey 15", sans-serif;
+          text-align: left;
+          margin-bottom: 0;
+          font-size: 2rem;
+          line-height: 1.2;
+          text-decoration: dashed !important;
+
+          // mark {
+          //   color: #fff;
+          //   background: transparent;
+          //   font-weight: bold; /* Optional to make marked text stand out more */
+          // }
+        }
+      }
+    }
+  }
+}
+
+/* Responsive card and navigation layout */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@media (min-width: 1440px) {
+  body main .navbar {
+    padding: 1.5rem 3rem;
+  }
+  body main .copy-container h1 {
+    font-size: clamp(5rem, 6vw, 7.5rem);
+  }
+  body main .copy-container .anime-text {
+    width: min(60%, 70rem);
+  }
+  body main .copy-container .anime-text p {
+    font-size: clamp(2rem, 2.2vw, 2.75rem);
+  }
+}
+
+@media (max-width: 1024px) {
+  body main .copy-container h1 {
+    width: 82%;
+    font-size: clamp(3.5rem, 8vw, 5rem);
+  }
+  body main .copy-container .anime-text {
+    width: 78%;
+  }
+  body main .copy-container .anime-text p {
+    font-size: clamp(1.55rem, 3.5vw, 2rem);
+  }
+}
+
+@media (max-width: 768px) {
+  body main nav .navbar {
+    padding: 0.85rem;
+  }
+  body main nav .navbar .btn {
+    padding: 0.6em 0.8em;
+    font-size: 1.1rem;
+  }
+  body main .horizontal-section {
+    height: 100svh;
+  }
+  body main .wrapper {
+    padding: 0.75rem;
+  }
+  body main .item_content {
+    border-radius: 1.5rem;
+  }
+  body main .copy-container h1 {
+    width: 88%;
+    font-size: clamp(3rem, 11vw, 4.5rem);
+  }
+  body main .copy-container .anime-text {
+    width: 90%;
+    padding: 1.25rem;
+  }
+  body main .copy-container .anime-text p {
+    font-size: clamp(1.35rem, 4.8vw, 1.8rem);
+    line-height: 1.15;
+  }
+}
+
+@media (max-width: 480px) {
+  body main nav .navbar {
+    padding: 0.7rem;
+  }
+  body main nav .navbar .btnc {
+    gap: 0.5rem;
+  }
+  body main nav .navbar .btn {
+    padding: 0.55em 0.65em;
+    font-size: 1rem;
+  }
+  body main .wrapper {
+    padding: 0.5rem;
+  }
+  body main .item_content {
+    border-radius: 1.1rem;
+  }
+  body main .copy-container h1 {
+    width: 90%;
+    font-size: clamp(2.6rem, 12vw, 3.7rem);
+  }
+  body main .copy-container .anime-text {
+    width: 100%;
+    padding: 0.9rem;
+  }
+  body main .copy-container .anime-text p {
+    font-size: clamp(1.15rem, 5.35vw, 1.45rem);
+    line-height: 1.12;
+  }
+}

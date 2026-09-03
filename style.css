@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=Jersey+10&family=Jersey+15&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+:root {
+  --bg-color-hsl: 59, 3%, 94%;
+  --bg-color: hsl(var(--bg-color-hsl));
+  --bg-color-translucent: hsla(var(--bg-color-hsl), 0.95);
+  --bg-color-highlight: #d4af37;
+  --color-text: hsl(192, 14%, 20%);
+  --color-text-highlight: hsl(0, 0%, 100%);
+  --page-width: 80ch;
+  --paragraph-font-size: min(max(1.2rem, 4vw), 1.4rem);
+  --header-font-size: min(max(2rem, 8vw), 4rem);
+  --ease: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body::-moz-selection {
+  background-color: #d4af37;
+}
+
+body::selection {
+  background-color: #d4af37;
+}
+
+body {
+  /* 2. Ensure body doesn't block the height */
+  min-height: 100vh;
+  font-family: "jersey 10";
+  /* From Uiverse.io by lucas_5777 */
+}
+body .container {
+  width: 100%;
+  min-height: 100vh;
+  --color: #1e1e1e;
+  background-color: #0c0c0c;
+  background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
+  background-size: 55px 55px;
+}
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+body main {
+  width: 100%; /* Ensure main takes full width */
+  /* --- Main Container --- */
+  /* --- The Scroll Track --- */
+  /* --- Individual Slide (Card Wrapper) --- */
+  /* --- Slide Content (The Visible Card) --- */
+  /* --- Typography & Text Layout --- */
+}
+body main nav .navbar {
+  width: 100%;
+  padding: 1rem;
+  /* Flexbox for the Navbar content itself */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body main nav .navbar .btn {
+  display: block;
+  padding: 0.7em 1em;
+  background: transparent;
+  outline: none;
+  border: 0;
+  color: #d4af37;
+  letter-spacing: 0.1em;
+  font-family: "jersey 10";
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1;
+}
+body main nav .navbar .cube {
+  position: relative;
+  transition: all 0.5s;
+}
+body main nav .navbar .cube .bg-top {
+  position: absolute;
+  height: 10px;
+  background: #d4af37;
+  bottom: 100%;
+  left: 5px;
+  right: -5px;
+  transform: skew(-45deg, 0);
+  margin: 0;
+  transition: all 0.4s;
+}
+body main nav .navbar .cube .bg-top .bg-inner {
+  bottom: 0;
+}
+body main nav .navbar .cube .bg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  background: #d4af37;
+  transition: all 0.4s;
+}
+body main nav .navbar .cube .bg-right {
+  position: absolute;
+  background: #d4af37;
+  top: -5px;
+  z-index: 0;
+  bottom: 5px;
+  width: 10px;
+  left: 100%;
+  transform: skew(0, -45deg);
+  transition: all 0.4s;
+}
+body main nav .navbar .cube .bg-right .bg-inner {
+  left: 0;
+}
+body main nav .navbar .cube .bg-inner {
+  background: #28282d;
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  top: 2px;
+  bottom: 2px;
+}
+body main nav .navbar .cube .txtm {
+  position: relative;
+  transition: all 0.4s;
+}
+body main nav .navbar .cube:hover .bg-inner {
+  background: #d4af37;
+  transition: all 0.4s;
+}
+body main nav .navbar .cube:hover .txtm {
+  color: #28282d;
+  transition: all 0.4s;
+}
+body main nav .navbar .cube:hover .bg-right,
+body main nav .navbar .cube:hover .bg,
+body main nav .navbar .cube:hover .bg-top {
+  background: #28282d;
+}
+body main nav .navbar .cube:active {
+  z-index: 9999;
+  animation: bounce 0.1s linear;
+}
+@keyframes bounce {
+  50% {
+    transform: scale(0.9);
+  }
+}
+body main nav .navbar .btnc {
+  display: flex;
+  gap: 1rem;
+}
+body main .horizontal-section {
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+}
+body main .wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: #000000; /* Your black background */
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+body main .list {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* GSAP usually needs items absolutely positioned or flexed. 
+  Based on your reference, they stack on top of each other: */
+}
+body main .item {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  /* Color Variations - These match the classes in your HTML */
+}
+body main .item.gr .item_content {
+  background-color: #fff;
+  /* Ensure text is visible on white */
+}
+body main .item.gr .item_content h1 {
+  color: #000;
+}
+body main .item.round1 .item_content {
+  background-color: #d4af37;
+}
+body main .item.eligibility .item_content {
+  background-color: #34d399;
+}
+body main .item.registration .item_content {
+  background-color: #d4af37;
+}
+body main .item.conduct .item_content {
+  background-color: #fa0000;
+}
+body main .item.quiz-rules .item_content {
+  background-color: #e65e0f;
+}
+body main .item.round2 .item_content {
+  background-color: #fa0000;
+}
+body main .item.round3 .item_content {
+  background-color: #e65e0f;
+}
+body main .item.round4 .item_content {
+  background-color: #2c0dd8;
+}
+body main .item_content {
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem; /* Your radius */
+  border: 2px solid rgba(37, 37, 37, 0.384); /* Your border */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #000000; /* Default color */
+  position: relative;
+  overflow: hidden;
+}
+body main .copy-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body main .copy-container h1 {
+  width: 70%;
+  color: #0c0c0c;
+  font-size: 5rem;
+  font-family: "Jersey 10", sans-serif;
+  line-height: 1;
+  text-transform: uppercase;
+}
+body main .copy-container .anime-text {
+  width: 60%;
+  padding: 2rem;
+}
+body main .copy-container .anime-text p {
+  color: rgb(255, 255, 255);
+  font-family: "Jersey 15", sans-serif;
+  text-align: left;
+  margin-bottom: 0;
+  font-size: 2rem;
+  line-height: 1.2;
+  -webkit-text-decoration: dashed !important;
+          text-decoration: dashed !important;
+}/*# sourceMappingURL=style.css.map */
+
+/* Responsive card and navigation layout */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  overflow-x: hidden;
+}
+@media (min-width: 1440px) {
+  body main .navbar { padding: 1.5rem 3rem; }
+  body main .copy-container h1 { font-size: clamp(5rem, 6vw, 7.5rem); }
+  body main .copy-container .anime-text { width: min(60%, 70rem); }
+  body main .copy-container .anime-text p { font-size: clamp(2rem, 2.2vw, 2.75rem); }
+}
+@media (max-width: 1024px) {
+  body main .copy-container h1 { width: 82%; font-size: clamp(3.5rem, 8vw, 5rem); }
+  body main .copy-container .anime-text { width: 78%; }
+  body main .copy-container .anime-text p { font-size: clamp(1.55rem, 3.5vw, 2rem); }
+}
+@media (max-width: 768px) {
+  body main nav .navbar { padding: 0.85rem; }
+  body main nav .navbar .btn { padding: 0.6em 0.8em; font-size: 1.1rem; }
+  body main .horizontal-section { height: 100svh; }
+  body main .wrapper { padding: 0.75rem; }
+  body main .item_content { border-radius: 1.5rem; }
+  body main .copy-container h1 { width: 88%; font-size: clamp(3rem, 11vw, 4.5rem); }
+  body main .copy-container .anime-text { width: 90%; padding: 1.25rem; }
+  body main .copy-container .anime-text p { font-size: clamp(1.35rem, 4.8vw, 1.8rem); line-height: 1.15; }
+}
+@media (max-width: 480px) {
+  body main nav .navbar { padding: 0.7rem; }
+  body main nav .navbar .btnc { gap: 0.5rem; }
+  body main nav .navbar .btn { padding: 0.55em 0.65em; font-size: 1rem; }
+  body main .wrapper { padding: 0.5rem; }
+  body main .item_content { border-radius: 1.1rem; }
+  body main .copy-container h1 { width: 90%; font-size: clamp(2.6rem, 12vw, 3.7rem); }
+  body main .copy-container .anime-text { width: 100%; padding: 0.9rem; }
+  body main .copy-container .anime-text p { font-size: clamp(1.15rem, 5.35vw, 1.45rem); line-height: 1.12; }
+}
